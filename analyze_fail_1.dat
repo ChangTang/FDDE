@@ -1,0 +1,720 @@
+# [No.1] construct_wrapper.1
+# In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(244)/    def construct(self, x, shape=None):/
+funcgraph fg_1(
+        %para1 : Tensor(F32)[1, 267, 400, 3]    # x
+        , %para2 : Ref[Tensor(F32)][1, 64, 1, 1]    # conv_edg.weight
+        , %para3 : Ref[Tensor(F32)][128, 128, 3, 3]    # convf.0.weight
+        , %para4 : Ref[Tensor(F32)][1, 128, 1, 1]    # convf.3.weight
+        , %para5 : Ref[Tensor(F32)][64, 64, 3, 3]    # WW.conv12.0.weight
+        , %para6 : Ref[Tensor(F32)][64, 64, 3, 3]    # WW.conv13.0.weight
+        , %para7 : Ref[Tensor(F32)][64, 64, 3, 3]    # WW.conv14.0.weight
+        , %para8 : Ref[Tensor(F32)][64, 64, 3, 3]    # NN.conv_l2.0.weight
+        , %para9 : Ref[Tensor(F32)][64, 64, 3, 3]    # NN.conv_l3.0.weight
+        , %para10 : Ref[Tensor(F32)][64, 64, 3, 3]    # NN.conv_l4.0.weight
+        , %para11 : Ref[Tensor(F32)][64, 64, 3, 3]    # NN.conv_l5.0.weight
+        , %para12 : Ref[Tensor(F32)][64, 64, 1, 1]    # conv1.0.weight
+        , %para13 : Ref[Tensor(F32)][64, 64, 3, 3]    # conv1.1.weight
+        , %para14 : Ref[Tensor(F32)][64, 256, 1, 1]    # conv2.0.weight
+        , %para15 : Ref[Tensor(F32)][64, 64, 3, 3]    # conv2.1.weight
+        , %para16 : Ref[Tensor(F32)][64, 512, 1, 1]    # conv3.0.weight
+        , %para17 : Ref[Tensor(F32)][64, 64, 3, 3]    # conv3.1.weight
+        , %para18 : Ref[Tensor(F32)][64, 1024, 1, 1]    # conv4.0.weight
+        , %para19 : Ref[Tensor(F32)][64, 64, 3, 3]    # conv4.1.weight
+        , %para20 : Ref[Tensor(F32)][64, 2048, 1, 1]    # conv5.0.weight
+        , %para21 : Ref[Tensor(F32)][64, 64, 3, 3]    # conv5.1.weight
+        , %para22 : Ref[Tensor(F32)][128]    # convf.1.gamma
+        , %para23 : Ref[Tensor(F32)][128]    # convf.1.beta
+        , %para24 : Ref[Tensor(F32)][128]    # convf.1.moving_mean
+        , %para25 : Ref[Tensor(F32)][128]    # convf.1.moving_variance
+        , %para26 : Ref[Tensor(F32)][64, 64, 3, 3]    # MM.conv5.0.weight
+        , %para27 : Ref[Tensor(F32)][64, 64, 3, 3]    # MM.conv1.0.weight
+        , %para28 : Ref[Tensor(F32)][64, 64, 3, 3]    # MM.conv4.0.weight
+        , %para29 : Ref[Tensor(F32)][64, 3, 7, 7]    # bkbone.conv1.weight
+        , %para30 : Ref[Tensor(F32)][64, 64, 3, 3]    # MM.conv2.0.weight
+        , %para31 : Ref[Tensor(F32)][64, 64, 3, 3]    # MM.conv3.0.weight
+        , %para32 : Ref[Tensor(F32)][64]    # WW.conv12.1.gamma
+        , %para33 : Ref[Tensor(F32)][64]    # WW.conv12.1.beta
+        , %para34 : Ref[Tensor(F32)][64]    # WW.conv12.1.moving_mean
+        , %para35 : Ref[Tensor(F32)][64]    # WW.conv12.1.moving_variance
+        , %para36 : Ref[Tensor(F32)][64]    # WW.conv13.1.gamma
+        , %para37 : Ref[Tensor(F32)][64]    # WW.conv13.1.beta
+        , %para38 : Ref[Tensor(F32)][64]    # WW.conv13.1.moving_mean
+        , %para39 : Ref[Tensor(F32)][64]    # WW.conv13.1.moving_variance
+        , %para40 : Ref[Tensor(F32)][64]    # WW.conv14.1.gamma
+        , %para41 : Ref[Tensor(F32)][64]    # WW.conv14.1.beta
+        , %para42 : Ref[Tensor(F32)][64]    # WW.conv14.1.moving_mean
+        , %para43 : Ref[Tensor(F32)][64]    # WW.conv14.1.moving_variance
+        , %para44 : Ref[Tensor(F32)][64]    # NN.conv_l2.1.gamma
+        , %para45 : Ref[Tensor(F32)][64]    # NN.conv_l2.1.beta
+        , %para46 : Ref[Tensor(F32)][64]    # NN.conv_l2.1.moving_mean
+        , %para47 : Ref[Tensor(F32)][64]    # NN.conv_l2.1.moving_variance
+        , %para48 : Ref[Tensor(F32)][64]    # NN.conv_l3.1.gamma
+        , %para49 : Ref[Tensor(F32)][64]    # NN.conv_l3.1.beta
+        , %para50 : Ref[Tensor(F32)][64]    # NN.conv_l3.1.moving_mean
+        , %para51 : Ref[Tensor(F32)][64]    # NN.conv_l3.1.moving_variance
+        , %para52 : Ref[Tensor(F32)][64]    # NN.conv_l4.1.gamma
+        , %para53 : Ref[Tensor(F32)][64]    # NN.conv_l4.1.beta
+        , %para54 : Ref[Tensor(F32)][64]    # NN.conv_l4.1.moving_mean
+        , %para55 : Ref[Tensor(F32)][64]    # NN.conv_l4.1.moving_variance
+        , %para56 : Ref[Tensor(F32)][64]    # NN.conv_l5.1.gamma
+        , %para57 : Ref[Tensor(F32)][64]    # NN.conv_l5.1.beta
+        , %para58 : Ref[Tensor(F32)][64]    # NN.conv_l5.1.moving_mean
+        , %para59 : Ref[Tensor(F32)][64]    # NN.conv_l5.1.moving_variance
+        , %para60 : Ref[Tensor(F32)][64]    # conv1.2.gamma
+        , %para61 : Ref[Tensor(F32)][64]    # conv1.2.beta
+        , %para62 : Ref[Tensor(F32)][64]    # conv1.2.moving_mean
+        , %para63 : Ref[Tensor(F32)][64]    # conv1.2.moving_variance
+        , %para64 : Ref[Tensor(F32)][64]    # conv2.2.gamma
+        , %para65 : Ref[Tensor(F32)][64]    # conv2.2.beta
+        , %para66 : Ref[Tensor(F32)][64]    # conv2.2.moving_mean
+        , %para67 : Ref[Tensor(F32)][64]    # conv2.2.moving_variance
+        , %para68 : Ref[Tensor(F32)][64]    # conv3.2.gamma
+        , %para69 : Ref[Tensor(F32)][64]    # conv3.2.beta
+        , %para70 : Ref[Tensor(F32)][64]    # conv3.2.moving_mean
+        , %para71 : Ref[Tensor(F32)][64]    # conv3.2.moving_variance
+        , %para72 : Ref[Tensor(F32)][64]    # conv4.2.gamma
+        , %para73 : Ref[Tensor(F32)][64]    # conv4.2.beta
+        , %para74 : Ref[Tensor(F32)][64]    # conv4.2.moving_mean
+        , %para75 : Ref[Tensor(F32)][64]    # conv4.2.moving_variance
+        , %para76 : Ref[Tensor(F32)][64]    # conv5.2.gamma
+        , %para77 : Ref[Tensor(F32)][64]    # conv5.2.beta
+        , %para78 : Ref[Tensor(F32)][64]    # conv5.2.moving_mean
+        , %para79 : Ref[Tensor(F32)][64]    # conv5.2.moving_variance
+        , %para80 : Ref[Tensor(F32)][64]    # MM.conv5.1.gamma
+        , %para81 : Ref[Tensor(F32)][64]    # MM.conv5.1.beta
+        , %para82 : Ref[Tensor(F32)][64]    # MM.conv5.1.moving_mean
+        , %para83 : Ref[Tensor(F32)][64]    # MM.conv5.1.moving_variance
+        , %para84 : Ref[Tensor(F32)][64]    # MM.conv1.1.gamma
+        , %para85 : Ref[Tensor(F32)][64]    # MM.conv1.1.beta
+        , %para86 : Ref[Tensor(F32)][64]    # MM.conv1.1.moving_mean
+        , %para87 : Ref[Tensor(F32)][64]    # MM.conv1.1.moving_variance
+        , %para88 : Ref[Tensor(F32)][64]    # MM.conv4.1.gamma
+        , %para89 : Ref[Tensor(F32)][64]    # MM.conv4.1.beta
+        , %para90 : Ref[Tensor(F32)][64]    # MM.conv4.1.moving_mean
+        , %para91 : Ref[Tensor(F32)][64]    # MM.conv4.1.moving_variance
+        , %para92 : Ref[Tensor(F32)][64]    # MM.conv2.1.gamma
+        , %para93 : Ref[Tensor(F32)][64]    # MM.conv2.1.beta
+        , %para94 : Ref[Tensor(F32)][64]    # MM.conv2.1.moving_mean
+        , %para95 : Ref[Tensor(F32)][64]    # MM.conv2.1.moving_variance
+        , %para96 : Ref[Tensor(F32)][64]    # MM.conv3.1.gamma
+        , %para97 : Ref[Tensor(F32)][64]    # MM.conv3.1.beta
+        , %para98 : Ref[Tensor(F32)][64]    # MM.conv3.1.moving_mean
+        , %para99 : Ref[Tensor(F32)][64]    # MM.conv3.1.moving_variance
+        , %para100 : Ref[Tensor(F32)][64]    # bkbone.bn1.gamma
+        , %para101 : Ref[Tensor(F32)][64]    # bkbone.bn1.beta
+        , %para102 : Ref[Tensor(F32)][64]    # bkbone.bn1.moving_mean
+        , %para103 : Ref[Tensor(F32)][64]    # bkbone.bn1.moving_variance
+        , %para104 : Ref[Tensor(F32)][64, 64, 3, 3]    # bkbone.layer1.0.conv2.weight
+        , %para105 : Ref[Tensor(F32)][64, 64, 3, 3]    # bkbone.layer1.1.conv2.weight
+        , %para106 : Ref[Tensor(F32)][64, 64, 3, 3]    # bkbone.layer1.2.conv2.weight
+        , %para107 : Ref[Tensor(F32)][128, 128, 3, 3]    # bkbone.layer2.0.conv2.weight
+        , %para108 : Ref[Tensor(F32)][128, 128, 3, 3]    # bkbone.layer2.1.conv2.weight
+        , %para109 : Ref[Tensor(F32)][128, 128, 3, 3]    # bkbone.layer2.2.conv2.weight
+        , %para110 : Ref[Tensor(F32)][128, 128, 3, 3]    # bkbone.layer2.3.conv2.weight
+        , %para111 : Ref[Tensor(F32)][256, 256, 3, 3]    # bkbone.layer3.0.conv2.weight
+        , %para112 : Ref[Tensor(F32)][256, 256, 3, 3]    # bkbone.layer3.1.conv2.weight
+        , %para113 : Ref[Tensor(F32)][256, 256, 3, 3]    # bkbone.layer3.2.conv2.weight
+        , %para114 : Ref[Tensor(F32)][256, 256, 3, 3]    # bkbone.layer3.3.conv2.weight
+        , %para115 : Ref[Tensor(F32)][256, 256, 3, 3]    # bkbone.layer3.4.conv2.weight
+        , %para116 : Ref[Tensor(F32)][256, 256, 3, 3]    # bkbone.layer3.5.conv2.weight
+        , %para117 : Ref[Tensor(F32)][512, 512, 3, 3]    # bkbone.layer4.0.conv2.weight
+        , %para118 : Ref[Tensor(F32)][512, 512, 3, 3]    # bkbone.layer4.1.conv2.weight
+        , %para119 : Ref[Tensor(F32)][512, 512, 3, 3]    # bkbone.layer4.2.conv2.weight
+        , %para120 : Ref[Tensor(F32)][64, 64, 1, 1]    # bkbone.layer1.0.conv1.weight
+        , %para121 : Ref[Tensor(F32)][64, 256, 1, 1]    # bkbone.layer1.1.conv1.weight
+        , %para122 : Ref[Tensor(F32)][64, 256, 1, 1]    # bkbone.layer1.2.conv1.weight
+        , %para123 : Ref[Tensor(F32)][128, 256, 1, 1]    # bkbone.layer2.0.conv1.weight
+        , %para124 : Ref[Tensor(F32)][128, 512, 1, 1]    # bkbone.layer2.1.conv1.weight
+        , %para125 : Ref[Tensor(F32)][128, 512, 1, 1]    # bkbone.layer2.2.conv1.weight
+        , %para126 : Ref[Tensor(F32)][128, 512, 1, 1]    # bkbone.layer2.3.conv1.weight
+        , %para127 : Ref[Tensor(F32)][256, 512, 1, 1]    # bkbone.layer3.0.conv1.weight
+        , %para128 : Ref[Tensor(F32)][256, 1024, 1, 1]    # bkbone.layer3.1.conv1.weight
+        , %para129 : Ref[Tensor(F32)][256, 1024, 1, 1]    # bkbone.layer3.2.conv1.weight
+        , %para130 : Ref[Tensor(F32)][256, 1024, 1, 1]    # bkbone.layer3.3.conv1.weight
+        , %para131 : Ref[Tensor(F32)][256, 1024, 1, 1]    # bkbone.layer3.4.conv1.weight
+        , %para132 : Ref[Tensor(F32)][256, 1024, 1, 1]    # bkbone.layer3.5.conv1.weight
+        , %para133 : Ref[Tensor(F32)][512, 1024, 1, 1]    # bkbone.layer4.0.conv1.weight
+        , %para134 : Ref[Tensor(F32)][512, 2048, 1, 1]    # bkbone.layer4.1.conv1.weight
+        , %para135 : Ref[Tensor(F32)][512, 2048, 1, 1]    # bkbone.layer4.2.conv1.weight
+        , %para136 : Ref[Tensor(F32)][64]    # bkbone.layer1.0.bn2.gamma
+        , %para137 : Ref[Tensor(F32)][64]    # bkbone.layer1.0.bn2.beta
+        , %para138 : Ref[Tensor(F32)][64]    # bkbone.layer1.0.bn2.moving_mean
+        , %para139 : Ref[Tensor(F32)][64]    # bkbone.layer1.0.bn2.moving_variance
+        , %para140 : Ref[Tensor(F32)][64]    # bkbone.layer1.1.bn2.gamma
+        , %para141 : Ref[Tensor(F32)][64]    # bkbone.layer1.1.bn2.beta
+        , %para142 : Ref[Tensor(F32)][64]    # bkbone.layer1.1.bn2.moving_mean
+        , %para143 : Ref[Tensor(F32)][64]    # bkbone.layer1.1.bn2.moving_variance
+        , %para144 : Ref[Tensor(F32)][64]    # bkbone.layer1.2.bn2.gamma
+        , %para145 : Ref[Tensor(F32)][64]    # bkbone.layer1.2.bn2.beta
+        , %para146 : Ref[Tensor(F32)][64]    # bkbone.layer1.2.bn2.moving_mean
+        , %para147 : Ref[Tensor(F32)][64]    # bkbone.layer1.2.bn2.moving_variance
+        , %para148 : Ref[Tensor(F32)][128]    # bkbone.layer2.0.bn2.gamma
+        , %para149 : Ref[Tensor(F32)][128]    # bkbone.layer2.0.bn2.beta
+        , %para150 : Ref[Tensor(F32)][128]    # bkbone.layer2.0.bn2.moving_mean
+        , %para151 : Ref[Tensor(F32)][128]    # bkbone.layer2.0.bn2.moving_variance
+        , %para152 : Ref[Tensor(F32)][128]    # bkbone.layer2.1.bn2.gamma
+        , %para153 : Ref[Tensor(F32)][128]    # bkbone.layer2.1.bn2.beta
+        , %para154 : Ref[Tensor(F32)][128]    # bkbone.layer2.1.bn2.moving_mean
+        , %para155 : Ref[Tensor(F32)][128]    # bkbone.layer2.1.bn2.moving_variance
+        , %para156 : Ref[Tensor(F32)][128]    # bkbone.layer2.2.bn2.gamma
+        , %para157 : Ref[Tensor(F32)][128]    # bkbone.layer2.2.bn2.beta
+        , %para158 : Ref[Tensor(F32)][128]    # bkbone.layer2.2.bn2.moving_mean
+        , %para159 : Ref[Tensor(F32)][128]    # bkbone.layer2.2.bn2.moving_variance
+        , %para160 : Ref[Tensor(F32)][128]    # bkbone.layer2.3.bn2.gamma
+        , %para161 : Ref[Tensor(F32)][128]    # bkbone.layer2.3.bn2.beta
+        , %para162 : Ref[Tensor(F32)][128]    # bkbone.layer2.3.bn2.moving_mean
+        , %para163 : Ref[Tensor(F32)][128]    # bkbone.layer2.3.bn2.moving_variance
+        , %para164 : Ref[Tensor(F32)][256]    # bkbone.layer3.0.bn2.gamma
+        , %para165 : Ref[Tensor(F32)][256]    # bkbone.layer3.0.bn2.beta
+        , %para166 : Ref[Tensor(F32)][256]    # bkbone.layer3.0.bn2.moving_mean
+        , %para167 : Ref[Tensor(F32)][256]    # bkbone.layer3.0.bn2.moving_variance
+        , %para168 : Ref[Tensor(F32)][256]    # bkbone.layer3.1.bn2.gamma
+        , %para169 : Ref[Tensor(F32)][256]    # bkbone.layer3.1.bn2.beta
+        , %para170 : Ref[Tensor(F32)][256]    # bkbone.layer3.1.bn2.moving_mean
+        , %para171 : Ref[Tensor(F32)][256]    # bkbone.layer3.1.bn2.moving_variance
+        , %para172 : Ref[Tensor(F32)][256]    # bkbone.layer3.2.bn2.gamma
+        , %para173 : Ref[Tensor(F32)][256]    # bkbone.layer3.2.bn2.beta
+        , %para174 : Ref[Tensor(F32)][256]    # bkbone.layer3.2.bn2.moving_mean
+        , %para175 : Ref[Tensor(F32)][256]    # bkbone.layer3.2.bn2.moving_variance
+        , %para176 : Ref[Tensor(F32)][256]    # bkbone.layer3.3.bn2.gamma
+        , %para177 : Ref[Tensor(F32)][256]    # bkbone.layer3.3.bn2.beta
+        , %para178 : Ref[Tensor(F32)][256]    # bkbone.layer3.3.bn2.moving_mean
+        , %para179 : Ref[Tensor(F32)][256]    # bkbone.layer3.3.bn2.moving_variance
+        , %para180 : Ref[Tensor(F32)][256]    # bkbone.layer3.4.bn2.gamma
+        , %para181 : Ref[Tensor(F32)][256]    # bkbone.layer3.4.bn2.beta
+        , %para182 : Ref[Tensor(F32)][256]    # bkbone.layer3.4.bn2.moving_mean
+        , %para183 : Ref[Tensor(F32)][256]    # bkbone.layer3.4.bn2.moving_variance
+        , %para184 : Ref[Tensor(F32)][256]    # bkbone.layer3.5.bn2.gamma
+        , %para185 : Ref[Tensor(F32)][256]    # bkbone.layer3.5.bn2.beta
+        , %para186 : Ref[Tensor(F32)][256]    # bkbone.layer3.5.bn2.moving_mean
+        , %para187 : Ref[Tensor(F32)][256]    # bkbone.layer3.5.bn2.moving_variance
+        , %para188 : Ref[Tensor(F32)][512]    # bkbone.layer4.0.bn2.gamma
+        , %para189 : Ref[Tensor(F32)][512]    # bkbone.layer4.0.bn2.beta
+        , %para190 : Ref[Tensor(F32)][512]    # bkbone.layer4.0.bn2.moving_mean
+        , %para191 : Ref[Tensor(F32)][512]    # bkbone.layer4.0.bn2.moving_variance
+        , %para192 : Ref[Tensor(F32)][512]    # bkbone.layer4.1.bn2.gamma
+        , %para193 : Ref[Tensor(F32)][512]    # bkbone.layer4.1.bn2.beta
+        , %para194 : Ref[Tensor(F32)][512]    # bkbone.layer4.1.bn2.moving_mean
+        , %para195 : Ref[Tensor(F32)][512]    # bkbone.layer4.1.bn2.moving_variance
+        , %para196 : Ref[Tensor(F32)][512]    # bkbone.layer4.2.bn2.gamma
+        , %para197 : Ref[Tensor(F32)][512]    # bkbone.layer4.2.bn2.beta
+        , %para198 : Ref[Tensor(F32)][512]    # bkbone.layer4.2.bn2.moving_mean
+        , %para199 : Ref[Tensor(F32)][512]    # bkbone.layer4.2.bn2.moving_variance
+        , %para200 : Ref[Tensor(F32)][256, 64, 1, 1]    # bkbone.layer1.0.conv3.weight
+        , %para201 : Ref[Tensor(F32)][64]    # bkbone.layer1.0.bn1.gamma
+        , %para202 : Ref[Tensor(F32)][64]    # bkbone.layer1.0.bn1.beta
+        , %para203 : Ref[Tensor(F32)][64]    # bkbone.layer1.0.bn1.moving_mean
+        , %para204 : Ref[Tensor(F32)][64]    # bkbone.layer1.0.bn1.moving_variance
+        , %para205 : Ref[Tensor(F32)][256, 64, 1, 1]    # bkbone.layer1.1.conv3.weight
+        , %para206 : Ref[Tensor(F32)][64]    # bkbone.layer1.1.bn1.gamma
+        , %para207 : Ref[Tensor(F32)][64]    # bkbone.layer1.1.bn1.beta
+        , %para208 : Ref[Tensor(F32)][64]    # bkbone.layer1.1.bn1.moving_mean
+        , %para209 : Ref[Tensor(F32)][64]    # bkbone.layer1.1.bn1.moving_variance
+        , %para210 : Ref[Tensor(F32)][256, 64, 1, 1]    # bkbone.layer1.2.conv3.weight
+        , %para211 : Ref[Tensor(F32)][64]    # bkbone.layer1.2.bn1.gamma
+        , %para212 : Ref[Tensor(F32)][64]    # bkbone.layer1.2.bn1.beta
+        , %para213 : Ref[Tensor(F32)][64]    # bkbone.layer1.2.bn1.moving_mean
+        , %para214 : Ref[Tensor(F32)][64]    # bkbone.layer1.2.bn1.moving_variance
+        , %para215 : Ref[Tensor(F32)][512, 128, 1, 1]    # bkbone.layer2.0.conv3.weight
+        , %para216 : Ref[Tensor(F32)][128]    # bkbone.layer2.0.bn1.gamma
+        , %para217 : Ref[Tensor(F32)][128]    # bkbone.layer2.0.bn1.beta
+        , %para218 : Ref[Tensor(F32)][128]    # bkbone.layer2.0.bn1.moving_mean
+        , %para219 : Ref[Tensor(F32)][128]    # bkbone.layer2.0.bn1.moving_variance
+        , %para220 : Ref[Tensor(F32)][512, 128, 1, 1]    # bkbone.layer2.1.conv3.weight
+        , %para221 : Ref[Tensor(F32)][128]    # bkbone.layer2.1.bn1.gamma
+        , %para222 : Ref[Tensor(F32)][128]    # bkbone.layer2.1.bn1.beta
+        , %para223 : Ref[Tensor(F32)][128]    # bkbone.layer2.1.bn1.moving_mean
+        , %para224 : Ref[Tensor(F32)][128]    # bkbone.layer2.1.bn1.moving_variance
+        , %para225 : Ref[Tensor(F32)][512, 128, 1, 1]    # bkbone.layer2.2.conv3.weight
+        , %para226 : Ref[Tensor(F32)][128]    # bkbone.layer2.2.bn1.gamma
+        , %para227 : Ref[Tensor(F32)][128]    # bkbone.layer2.2.bn1.beta
+        , %para228 : Ref[Tensor(F32)][128]    # bkbone.layer2.2.bn1.moving_mean
+        , %para229 : Ref[Tensor(F32)][128]    # bkbone.layer2.2.bn1.moving_variance
+        , %para230 : Ref[Tensor(F32)][512, 128, 1, 1]    # bkbone.layer2.3.conv3.weight
+        , %para231 : Ref[Tensor(F32)][128]    # bkbone.layer2.3.bn1.gamma
+        , %para232 : Ref[Tensor(F32)][128]    # bkbone.layer2.3.bn1.beta
+        , %para233 : Ref[Tensor(F32)][128]    # bkbone.layer2.3.bn1.moving_mean
+        , %para234 : Ref[Tensor(F32)][128]    # bkbone.layer2.3.bn1.moving_variance
+        , %para235 : Ref[Tensor(F32)][1024, 256, 1, 1]    # bkbone.layer3.0.conv3.weight
+        , %para236 : Ref[Tensor(F32)][256]    # bkbone.layer3.0.bn1.gamma
+        , %para237 : Ref[Tensor(F32)][256]    # bkbone.layer3.0.bn1.beta
+        , %para238 : Ref[Tensor(F32)][256]    # bkbone.layer3.0.bn1.moving_mean
+        , %para239 : Ref[Tensor(F32)][256]    # bkbone.layer3.0.bn1.moving_variance
+        , %para240 : Ref[Tensor(F32)][1024, 256, 1, 1]    # bkbone.layer3.1.conv3.weight
+        , %para241 : Ref[Tensor(F32)][256]    # bkbone.layer3.1.bn1.gamma
+        , %para242 : Ref[Tensor(F32)][256]    # bkbone.layer3.1.bn1.beta
+        , %para243 : Ref[Tensor(F32)][256]    # bkbone.layer3.1.bn1.moving_mean
+        , %para244 : Ref[Tensor(F32)][256]    # bkbone.layer3.1.bn1.moving_variance
+        , %para245 : Ref[Tensor(F32)][1024, 256, 1, 1]    # bkbone.layer3.2.conv3.weight
+        , %para246 : Ref[Tensor(F32)][256]    # bkbone.layer3.2.bn1.gamma
+        , %para247 : Ref[Tensor(F32)][256]    # bkbone.layer3.2.bn1.beta
+        , %para248 : Ref[Tensor(F32)][256]    # bkbone.layer3.2.bn1.moving_mean
+        , %para249 : Ref[Tensor(F32)][256]    # bkbone.layer3.2.bn1.moving_variance
+        , %para250 : Ref[Tensor(F32)][1024, 256, 1, 1]    # bkbone.layer3.3.conv3.weight
+        , %para251 : Ref[Tensor(F32)][256]    # bkbone.layer3.3.bn1.gamma
+        , %para252 : Ref[Tensor(F32)][256]    # bkbone.layer3.3.bn1.beta
+        , %para253 : Ref[Tensor(F32)][256]    # bkbone.layer3.3.bn1.moving_mean
+        , %para254 : Ref[Tensor(F32)][256]    # bkbone.layer3.3.bn1.moving_variance
+        , %para255 : Ref[Tensor(F32)][1024, 256, 1, 1]    # bkbone.layer3.4.conv3.weight
+        , %para256 : Ref[Tensor(F32)][256]    # bkbone.layer3.4.bn1.gamma
+        , %para257 : Ref[Tensor(F32)][256]    # bkbone.layer3.4.bn1.beta
+        , %para258 : Ref[Tensor(F32)][256]    # bkbone.layer3.4.bn1.moving_mean
+        , %para259 : Ref[Tensor(F32)][256]    # bkbone.layer3.4.bn1.moving_variance
+        , %para260 : Ref[Tensor(F32)][1024, 256, 1, 1]    # bkbone.layer3.5.conv3.weight
+        , %para261 : Ref[Tensor(F32)][256]    # bkbone.layer3.5.bn1.gamma
+        , %para262 : Ref[Tensor(F32)][256]    # bkbone.layer3.5.bn1.beta
+        , %para263 : Ref[Tensor(F32)][256]    # bkbone.layer3.5.bn1.moving_mean
+        , %para264 : Ref[Tensor(F32)][256]    # bkbone.layer3.5.bn1.moving_variance
+        , %para265 : Ref[Tensor(F32)][2048, 512, 1, 1]    # bkbone.layer4.0.conv3.weight
+        , %para266 : Ref[Tensor(F32)][512]    # bkbone.layer4.0.bn1.gamma
+        , %para267 : Ref[Tensor(F32)][512]    # bkbone.layer4.0.bn1.beta
+        , %para268 : Ref[Tensor(F32)][512]    # bkbone.layer4.0.bn1.moving_mean
+        , %para269 : Ref[Tensor(F32)][512]    # bkbone.layer4.0.bn1.moving_variance
+        , %para270 : Ref[Tensor(F32)][2048, 512, 1, 1]    # bkbone.layer4.1.conv3.weight
+        , %para271 : Ref[Tensor(F32)][512]    # bkbone.layer4.1.bn1.gamma
+        , %para272 : Ref[Tensor(F32)][512]    # bkbone.layer4.1.bn1.beta
+        , %para273 : Ref[Tensor(F32)][512]    # bkbone.layer4.1.bn1.moving_mean
+        , %para274 : Ref[Tensor(F32)][512]    # bkbone.layer4.1.bn1.moving_variance
+        , %para275 : Ref[Tensor(F32)][2048, 512, 1, 1]    # bkbone.layer4.2.conv3.weight
+        , %para276 : Ref[Tensor(F32)][512]    # bkbone.layer4.2.bn1.gamma
+        , %para277 : Ref[Tensor(F32)][512]    # bkbone.layer4.2.bn1.beta
+        , %para278 : Ref[Tensor(F32)][512]    # bkbone.layer4.2.bn1.moving_mean
+        , %para279 : Ref[Tensor(F32)][512]    # bkbone.layer4.2.bn1.moving_variance
+        , %para280 : Ref[Tensor(F32)][256]    # bkbone.layer1.0.bn3.gamma
+        , %para281 : Ref[Tensor(F32)][256]    # bkbone.layer1.0.bn3.beta
+        , %para282 : Ref[Tensor(F32)][256]    # bkbone.layer1.0.bn3.moving_mean
+        , %para283 : Ref[Tensor(F32)][256]    # bkbone.layer1.0.bn3.moving_variance
+        , %para284 : Ref[Tensor(F32)][256]    # bkbone.layer1.1.bn3.gamma
+        , %para285 : Ref[Tensor(F32)][256]    # bkbone.layer1.1.bn3.beta
+        , %para286 : Ref[Tensor(F32)][256]    # bkbone.layer1.1.bn3.moving_mean
+        , %para287 : Ref[Tensor(F32)][256]    # bkbone.layer1.1.bn3.moving_variance
+        , %para288 : Ref[Tensor(F32)][256]    # bkbone.layer1.2.bn3.gamma
+        , %para289 : Ref[Tensor(F32)][256]    # bkbone.layer1.2.bn3.beta
+        , %para290 : Ref[Tensor(F32)][256]    # bkbone.layer1.2.bn3.moving_mean
+        , %para291 : Ref[Tensor(F32)][256]    # bkbone.layer1.2.bn3.moving_variance
+        , %para292 : Ref[Tensor(F32)][512]    # bkbone.layer2.0.bn3.gamma
+        , %para293 : Ref[Tensor(F32)][512]    # bkbone.layer2.0.bn3.beta
+        , %para294 : Ref[Tensor(F32)][512]    # bkbone.layer2.0.bn3.moving_mean
+        , %para295 : Ref[Tensor(F32)][512]    # bkbone.layer2.0.bn3.moving_variance
+        , %para296 : Ref[Tensor(F32)][512]    # bkbone.layer2.1.bn3.gamma
+        , %para297 : Ref[Tensor(F32)][512]    # bkbone.layer2.1.bn3.beta
+        , %para298 : Ref[Tensor(F32)][512]    # bkbone.layer2.1.bn3.moving_mean
+        , %para299 : Ref[Tensor(F32)][512]    # bkbone.layer2.1.bn3.moving_variance
+        , %para300 : Ref[Tensor(F32)][512]    # bkbone.layer2.2.bn3.gamma
+        , %para301 : Ref[Tensor(F32)][512]    # bkbone.layer2.2.bn3.beta
+        , %para302 : Ref[Tensor(F32)][512]    # bkbone.layer2.2.bn3.moving_mean
+        , %para303 : Ref[Tensor(F32)][512]    # bkbone.layer2.2.bn3.moving_variance
+        , %para304 : Ref[Tensor(F32)][512]    # bkbone.layer2.3.bn3.gamma
+        , %para305 : Ref[Tensor(F32)][512]    # bkbone.layer2.3.bn3.beta
+        , %para306 : Ref[Tensor(F32)][512]    # bkbone.layer2.3.bn3.moving_mean
+        , %para307 : Ref[Tensor(F32)][512]    # bkbone.layer2.3.bn3.moving_variance
+        , %para308 : Ref[Tensor(F32)][1024]    # bkbone.layer3.0.bn3.gamma
+        , %para309 : Ref[Tensor(F32)][1024]    # bkbone.layer3.0.bn3.beta
+        , %para310 : Ref[Tensor(F32)][1024]    # bkbone.layer3.0.bn3.moving_mean
+        , %para311 : Ref[Tensor(F32)][1024]    # bkbone.layer3.0.bn3.moving_variance
+        , %para312 : Ref[Tensor(F32)][1024]    # bkbone.layer3.1.bn3.gamma
+        , %para313 : Ref[Tensor(F32)][1024]    # bkbone.layer3.1.bn3.beta
+        , %para314 : Ref[Tensor(F32)][1024]    # bkbone.layer3.1.bn3.moving_mean
+        , %para315 : Ref[Tensor(F32)][1024]    # bkbone.layer3.1.bn3.moving_variance
+        , %para316 : Ref[Tensor(F32)][1024]    # bkbone.layer3.2.bn3.gamma
+        , %para317 : Ref[Tensor(F32)][1024]    # bkbone.layer3.2.bn3.beta
+        , %para318 : Ref[Tensor(F32)][1024]    # bkbone.layer3.2.bn3.moving_mean
+        , %para319 : Ref[Tensor(F32)][1024]    # bkbone.layer3.2.bn3.moving_variance
+        , %para320 : Ref[Tensor(F32)][1024]    # bkbone.layer3.3.bn3.gamma
+        , %para321 : Ref[Tensor(F32)][1024]    # bkbone.layer3.3.bn3.beta
+        , %para322 : Ref[Tensor(F32)][1024]    # bkbone.layer3.3.bn3.moving_mean
+        , %para323 : Ref[Tensor(F32)][1024]    # bkbone.layer3.3.bn3.moving_variance
+        , %para324 : Ref[Tensor(F32)][1024]    # bkbone.layer3.4.bn3.gamma
+        , %para325 : Ref[Tensor(F32)][1024]    # bkbone.layer3.4.bn3.beta
+        , %para326 : Ref[Tensor(F32)][1024]    # bkbone.layer3.4.bn3.moving_mean
+        , %para327 : Ref[Tensor(F32)][1024]    # bkbone.layer3.4.bn3.moving_variance
+        , %para328 : Ref[Tensor(F32)][1024]    # bkbone.layer3.5.bn3.gamma
+        , %para329 : Ref[Tensor(F32)][1024]    # bkbone.layer3.5.bn3.beta
+        , %para330 : Ref[Tensor(F32)][1024]    # bkbone.layer3.5.bn3.moving_mean
+        , %para331 : Ref[Tensor(F32)][1024]    # bkbone.layer3.5.bn3.moving_variance
+        , %para332 : Ref[Tensor(F32)][2048]    # bkbone.layer4.0.bn3.gamma
+        , %para333 : Ref[Tensor(F32)][2048]    # bkbone.layer4.0.bn3.beta
+        , %para334 : Ref[Tensor(F32)][2048]    # bkbone.layer4.0.bn3.moving_mean
+        , %para335 : Ref[Tensor(F32)][2048]    # bkbone.layer4.0.bn3.moving_variance
+        , %para336 : Ref[Tensor(F32)][2048]    # bkbone.layer4.1.bn3.gamma
+        , %para337 : Ref[Tensor(F32)][2048]    # bkbone.layer4.1.bn3.beta
+        , %para338 : Ref[Tensor(F32)][2048]    # bkbone.layer4.1.bn3.moving_mean
+        , %para339 : Ref[Tensor(F32)][2048]    # bkbone.layer4.1.bn3.moving_variance
+        , %para340 : Ref[Tensor(F32)][2048]    # bkbone.layer4.2.bn3.gamma
+        , %para341 : Ref[Tensor(F32)][2048]    # bkbone.layer4.2.bn3.beta
+        , %para342 : Ref[Tensor(F32)][2048]    # bkbone.layer4.2.bn3.moving_mean
+        , %para343 : Ref[Tensor(F32)][2048]    # bkbone.layer4.2.bn3.moving_variance
+        , %para344 : Ref[Tensor(F32)][256, 64, 1, 1]    # bkbone.layer1.0.down_sample_layer.0.weight
+        , %para345 : Ref[Tensor(F32)][512, 256, 1, 1]    # bkbone.layer2.0.down_sample_layer.0.weight
+        , %para346 : Ref[Tensor(F32)][1024, 512, 1, 1]    # bkbone.layer3.0.down_sample_layer.0.weight
+        , %para347 : Ref[Tensor(F32)][2048, 1024, 1, 1]    # bkbone.layer4.0.down_sample_layer.0.weight
+        , %para348 : Ref[Tensor(F32)][256]    # bkbone.layer1.0.down_sample_layer.1.gamma
+        , %para349 : Ref[Tensor(F32)][256]    # bkbone.layer1.0.down_sample_layer.1.beta
+        , %para350 : Ref[Tensor(F32)][256]    # bkbone.layer1.0.down_sample_layer.1.moving_mean
+        , %para351 : Ref[Tensor(F32)][256]    # bkbone.layer1.0.down_sample_layer.1.moving_variance
+        , %para352 : Ref[Tensor(F32)][512]    # bkbone.layer2.0.down_sample_layer.1.gamma
+        , %para353 : Ref[Tensor(F32)][512]    # bkbone.layer2.0.down_sample_layer.1.beta
+        , %para354 : Ref[Tensor(F32)][512]    # bkbone.layer2.0.down_sample_layer.1.moving_mean
+        , %para355 : Ref[Tensor(F32)][512]    # bkbone.layer2.0.down_sample_layer.1.moving_variance
+        , %para356 : Ref[Tensor(F32)][1024]    # bkbone.layer3.0.down_sample_layer.1.gamma
+        , %para357 : Ref[Tensor(F32)][1024]    # bkbone.layer3.0.down_sample_layer.1.beta
+        , %para358 : Ref[Tensor(F32)][1024]    # bkbone.layer3.0.down_sample_layer.1.moving_mean
+        , %para359 : Ref[Tensor(F32)][1024]    # bkbone.layer3.0.down_sample_layer.1.moving_variance
+        , %para360 : Ref[Tensor(F32)][2048]    # bkbone.layer4.0.down_sample_layer.1.gamma
+        , %para361 : Ref[Tensor(F32)][2048]    # bkbone.layer4.0.down_sample_layer.1.beta
+        , %para362 : Ref[Tensor(F32)][2048]    # bkbone.layer4.0.down_sample_layer.1.moving_mean
+        , %para363 : Ref[Tensor(F32)][2048]    # bkbone.layer4.0.down_sample_layer.1.moving_variance
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_9(%para1, None)    #(Tensor(F32)[1, 267, 400, 3], NoneType)    # fg_9=construct.9 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/#[CNode]10
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/#[CNode]11
+}
+# order:
+#   1: construct_wrapper.1:[CNode]10{[0]: ValueNode<FuncGraph> construct.9, [1]: x, [2]: ValueNode<None> None}
+#   2: construct_wrapper.1:[CNode]11{[0]: ValueNode<Primitive> Return, [1]: [CNode]10}
+
+
+# [No.2] construct.2
+# In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(244)/    def construct(self, x, shape=None):/
+funcgraph fg_2[fg_1](
+        %para364 : Tensor(F32)[1, 267, 400, 3]    # Φx
+        , %para365 : NoneType    # shape
+    ) {
+    %1 : Bool = DoSignaturePrimitive::S-Prim-is_{prim_type=1}(%para365, None)    #(NoneType, NoneType) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/#[CNode]12
+    %2 : Bool = FuncGraph::fg_13(%1)    #(Bool)    # fg_13=bool_.13 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/#[CNode]12
+    %3 : Func = Primitive::Switch{prim_type=1}(%2, FuncGraph::fg_3, FuncGraph::fg_14)    #(Bool, Func, Func)    # fg_3=✓construct.3, fg_14=✗construct.14 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/#[CNode]15
+
+#------------------------> 1
+    %4 = %3() #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/#[CNode]16
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/#[CNode]17
+}
+# order:
+#   1: construct.2:Φresize_bilinear{[0]: ValueNode<ClassType> class 'mindspore.nn.layer.basic.ResizeBilinear'}
+#   2: construct.2:[CNode]18{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> axis}
+#   3: construct.2:[CNode]19{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 1}
+#   4: construct.2:[CNode]20{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]18, [2]: [CNode]19}
+#   5: construct.2:Φconc{[0]: ValueNode<UnpackCall> unpack_call, [1]: ValueNode<ClassType> class 'mindspore.ops.operations.array_ops.Concat', [2]: [CNode]20}
+#   6: construct.2:[CNode]12{[0]: ValueNode<DoSignaturePrimitive> S-Prim-is_, [1]: shape, [2]: ValueNode<None> None}
+#   7: construct.2:[CNode]12{[0]: ValueNode<FuncGraph> bool_.13, [1]: [CNode]12}
+#   8: construct.2:[CNode]15{[0]: ValueNode<Primitive> Switch, [1]: [CNode]12, [2]: ValueNode<FuncGraph> ✓construct.3, [3]: ValueNode<FuncGraph> ✗construct.14}
+#   9: construct.2:[CNode]16{[0]: [CNode]15}
+#  10: construct.2:[CNode]17{[0]: ValueNode<Primitive> Return, [1]: [CNode]16}
+
+
+# [No.3] ✓construct.3
+# In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/
+funcgraph fg_3[fg_2](
+) {
+    %1 : Tuple[I64*4] = Primitive::getattr{prim_type=1}(%para364, "shape")    #(Tensor(F32)[1, 267, 400, 3], String) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(248)/            shape = x.shape[2:]/#[CNode]21
+    %2 : Slice[Int64 : kMetaTypeNone : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(I64(2), None, None)    #(I64, NoneType, NoneType) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(0)/#[CNode]22
+    %3 : Tuple[I64*2] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, %2)    #(Tuple[I64*4], Slice[Int64 : kMetaTypeNone : kMetaTypeNone]) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(248)/            shape = x.shape[2:]/#shape
+
+#------------------------> 2
+    %4 = FuncGraph::fg_4(%3)    #(Tuple[I64*2])    # fg_4=↓construct.4 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/#[CNode]23
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/#[CNode]24
+}
+# order:
+#   1: ✓construct.3:[CNode]21{[0]: ValueNode<Primitive> getattr, [1]: Φx, [2]: ValueNode<StringImm> shape}
+#   2: ✓construct.3:[CNode]22{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<Int64Imm> 2, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#   3: ✓construct.3:shape{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]21, [2]: [CNode]22}
+#   4: ✓construct.3:[CNode]23{[0]: ValueNode<FuncGraph> ↓construct.4, [1]: shape}
+#   5: ✓construct.3:[CNode]24{[0]: ValueNode<Primitive> Return, [1]: [CNode]23}
+
+
+# [No.4] ↓construct.4
+# In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(247)/        if shape is None:/
+funcgraph fg_4[fg_2](
+        %para366 : Tuple[I64*2]    # Φshape
+    ) {
+    %1 : Tuple[String*2] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("edg", "input")    #(String, String) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(255)/        (out12,out13, out14) = self.WW(edg=out_l1, input=[out_l2, out_l3, out_l4])/#[CNode]25
+
+#------------------------> 3
+    %2 = FuncGraph::fg_5(%para364)    #(Tensor(F32)[1, 267, 400, 3])    # fg_5=construct.5 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(249)/        out1, out2, out3, out4, out5 = self.bkbone(x)/#[CNode]26
+    %3 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%2, I64(0))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(249)/        out1, out2, out3, out4, out5 = self.bkbone(x)/#out1
+    %4 = FuncGraph::fg_27(%3)    #(Undefined)    # fg_27=construct.27 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#[CNode]28
+    %5 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%2, I64(1))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(249)/        out1, out2, out3, out4, out5 = self.bkbone(x)/#out2
+    %6 = FuncGraph::fg_29(%5)    #(Undefined)    # fg_29=construct.29 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#[CNode]30
+    %7 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%2, I64(2))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(249)/        out1, out2, out3, out4, out5 = self.bkbone(x)/#out3
+    %8 = FuncGraph::fg_31(%7)    #(Undefined)    # fg_31=construct.31 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#[CNode]32
+    %9 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%2, I64(3))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(249)/        out1, out2, out3, out4, out5 = self.bkbone(x)/#out4
+    %10 = FuncGraph::fg_33(%9)    #(Undefined)    # fg_33=construct.33 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#[CNode]34
+    %11 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%2, I64(4))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(249)/        out1, out2, out3, out4, out5 = self.bkbone(x)/#out5
+    %12 = FuncGraph::fg_35(%11)    #(Undefined)    # fg_35=construct.35 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#[CNode]36
+    %13 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%4, %6, %8, %10, %12)    #(Undefined, Undefined, Undefined, Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#[CNode]37
+    %14 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%13, I64(0))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#out1
+    %15 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%13, I64(4))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#out5
+    %16 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%13, I64(3))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#out4
+    %17 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%13, I64(2))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#out3
+    %18 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%13, I64(1))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(250)/        out1, out2, out3, out4, out5 = self.conv1(out1),self.conv2(out2), self.conv3(out3), self.conv4(out4), self.conv5(out5)/#out2
+    %19 = DoSignaturePrimitive::S-Prim-make_list{prim_type=1}(%15, %16, %17, %18)    #(Undefined, Undefined, Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(252)/        (out_l2,out_l3, out_l4, out_l5) = self.NN([out5, out4, out3,out2])/#[CNode]38
+    %20 = FuncGraph::fg_39(%19)    #(Undefined)    # fg_39=construct.39 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(252)/        (out_l2,out_l3, out_l4, out_l5) = self.NN([out5, out4, out3,out2])/#[CNode]40
+    %21 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%20, I64(0))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(252)/        (out_l2,out_l3, out_l4, out_l5) = self.NN([out5, out4, out3,out2])/#out_l2
+    %22 = FuncGraph::fg_41(%14, %21)    #(Undefined, Undefined)    # fg_41=construct.41 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(254)/        out_l1 = self.MM(out1, out_l2)/#out_l1
+    %23 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%20, I64(1))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(252)/        (out_l2,out_l3, out_l4, out_l5) = self.NN([out5, out4, out3,out2])/#out_l3
+    %24 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%20, I64(2))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(252)/        (out_l2,out_l3, out_l4, out_l5) = self.NN([out5, out4, out3,out2])/#out_l4
+    %25 = DoSignaturePrimitive::S-Prim-make_list{prim_type=1}(%21, %23, %24)    #(Undefined, Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(255)/        (out12,out13, out14) = self.WW(edg=out_l1, input=[out_l2, out_l3, out_l4])/#[CNode]42
+    %26 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%22, %25)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(255)/        (out12,out13, out14) = self.WW(edg=out_l1, input=[out_l2, out_l3, out_l4])/#[CNode]43
+    %27 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%1, %26)    #(Tuple[String*2], Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(255)/        (out12,out13, out14) = self.WW(edg=out_l1, input=[out_l2, out_l3, out_l4])/#[CNode]44
+    %28 = UnpackCall::unpack_call(FuncGraph::fg_45, %27)    #(Undefined, Undefined)    # fg_45=construct.45 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(255)/        (out12,out13, out14) = self.WW(edg=out_l1, input=[out_l2, out_l3, out_l4])/#[CNode]46
+    %29 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%28, I64(0))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(255)/        (out12,out13, out14) = self.WW(edg=out_l1, input=[out_l2, out_l3, out_l4])/#out12
+    %30 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%28, I64(1))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(255)/        (out12,out13, out14) = self.WW(edg=out_l1, input=[out_l2, out_l3, out_l4])/#out13
+    %31 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%20, I64(3))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(252)/        (out_l2,out_l3, out_l4, out_l5) = self.NN([out5, out4, out3,out2])/#out_l5
+    %32 = Primitive::MakeTuple{prim_type=1}(%29, %30, %31)    #(Undefined, Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(244)/    def construct(self, x, shape=None):/#[CNode]47
+    %33 = Primitive::stop_gradient{prim_type=1}(%32)    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(244)/    def construct(self, x, shape=None):/#[CNode]48
+    %34 = $(↓construct.4):ClassType() #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(257)/        out14_5 = out14 + resize_bilinear(out5, size=out14.shape[2:],align_corners=True)/#Φresize_bilinear
+    %35 = FuncGraph::fg_49(%22)    #(Undefined)    # fg_49=construct.49 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(261)/        edg = self.conv_edg(out_l1)/#edg
+    %36 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%35)    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(262)/        edg = resize_bilinear(edg, size=shape,align_corners=True)/#[CNode]50
+    %37 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("size", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(262)/        edg = resize_bilinear(edg, size=shape,align_corners=True)/#[CNode]51
+    %38 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%para366, Bool(1))    #(Tuple[I64*2], Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(262)/        edg = resize_bilinear(edg, size=shape,align_corners=True)/#[CNode]52
+    %39 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%37, %38)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(262)/        edg = resize_bilinear(edg, size=shape,align_corners=True)/#[CNode]53
+    %40 = UnpackCall::unpack_call(%34, %36, %39)    #(Undefined, Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(262)/        edg = resize_bilinear(edg, size=shape,align_corners=True)/#edg
+    %41 = $(↓construct.4):DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("axis")    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(246)/        conc = ops.Concat(axis = 1)/#[CNode]18
+    %42 = $(↓construct.4):DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(1))    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(246)/        conc = ops.Concat(axis = 1)/#[CNode]19
+    %43 = $(↓construct.4):DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%41, %42)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(246)/        conc = ops.Concat(axis = 1)/#[CNode]20
+    %44 = $(↓construct.4):UnpackCall::unpack_call(ClassType, %43)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(259)/        out = self.convf(conc((out_l1,out14_5)))/#Φconc
+    %45 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%28, I64(2))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(255)/        (out12,out13, out14) = self.WW(edg=out_l1, input=[out_l2, out_l3, out_l4])/#out14
+    %46 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%15)    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(257)/        out14_5 = out14 + resize_bilinear(out5, size=out14.shape[2:],align_corners=True)/#[CNode]54
+    %47 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("size", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(257)/        out14_5 = out14 + resize_bilinear(out5, size=out14.shape[2:],align_corners=True)/#[CNode]55
+    %48 = Primitive::getattr{prim_type=1}(%45, "shape")    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(257)/        out14_5 = out14 + resize_bilinear(out5, size=out14.shape[2:],align_corners=True)/#[CNode]56
+    %49 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(I64(2), None, None)    #(Undefined, Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(0)/#[CNode]57
+    %50 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%48, %49)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(257)/        out14_5 = out14 + resize_bilinear(out5, size=out14.shape[2:],align_corners=True)/#[CNode]58
+    %51 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%50, Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(257)/        out14_5 = out14 + resize_bilinear(out5, size=out14.shape[2:],align_corners=True)/#[CNode]59
+    %52 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%47, %51)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(257)/        out14_5 = out14 + resize_bilinear(out5, size=out14.shape[2:],align_corners=True)/#[CNode]60
+    %53 = UnpackCall::unpack_call(%34, %46, %52)    #(Undefined, Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(257)/        out14_5 = out14 + resize_bilinear(out5, size=out14.shape[2:],align_corners=True)/#[CNode]61
+    %54 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(%45, %53)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(257)/        out14_5 = out14 + resize_bilinear(out5, size=out14.shape[2:],align_corners=True)/#out14_5
+    %55 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%22, %54)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(259)/        out = self.convf(conc((out_l1,out14_5)))/#[CNode]62
+    %56 = %44(%55)    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(259)/        out = self.convf(conc((out_l1,out14_5)))/#[CNode]63
+    %57 = FuncGraph::fg_64(%56)    #(Undefined)    # fg_64=construct.64 #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(259)/        out = self.convf(conc((out_l1,out14_5)))/#out
+    %58 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%57)    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(263)/        out = resize_bilinear(out, size=shape,align_corners=True)/#[CNode]65
+    %59 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("size", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(263)/        out = resize_bilinear(out, size=shape,align_corners=True)/#[CNode]66
+    %60 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%para366, Bool(1))    #(Tuple[I64*2], Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(263)/        out = resize_bilinear(out, size=shape,align_corners=True)/#[CNode]67
+    %61 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%59, %60)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(263)/        out = resize_bilinear(out, size=shape,align_corners=True)/#[CNode]68
+    %62 = UnpackCall::unpack_call(%34, %58, %61)    #(Undefined, Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(263)/        out = resize_bilinear(out, size=shape,align_corners=True)/#out
+    %63 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%40, %62)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(264)/        return edg, out/#[CNode]69
+    %64 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%63, %33)    #(Undefined, Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(244)/    def construct(self, x, shape=None):/#[CNode]70
+    Primitive::Return{prim_type=1}(%64)    #(Undefined) #scope: Default
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/net.py(244)/    def construct(self, x, shape=None):/#[CNode]71
+}
+# order:
+#   1: ↓construct.4:[CNode]26{[0]: ValueNode<FuncGraph> construct.5, [1]: Φx}
+#   2: ↓construct.4:out1{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]26, [2]: ValueNode<Int64Imm> 0}
+#   3: ↓construct.4:out2{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]26, [2]: ValueNode<Int64Imm> 1}
+#   4: ↓construct.4:out3{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]26, [2]: ValueNode<Int64Imm> 2}
+#   5: ↓construct.4:out4{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]26, [2]: ValueNode<Int64Imm> 3}
+#   6: ↓construct.4:out5{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]26, [2]: ValueNode<Int64Imm> 4}
+#   7: ↓construct.4:[CNode]28{[0]: ValueNode<FuncGraph> construct.27, [1]: out1}
+#   8: ↓construct.4:[CNode]30{[0]: ValueNode<FuncGraph> construct.29, [1]: out2}
+#   9: ↓construct.4:[CNode]32{[0]: ValueNode<FuncGraph> construct.31, [1]: out3}
+#  10: ↓construct.4:[CNode]34{[0]: ValueNode<FuncGraph> construct.33, [1]: out4}
+#  11: ↓construct.4:[CNode]36{[0]: ValueNode<FuncGraph> construct.35, [1]: out5}
+#  12: ↓construct.4:[CNode]37{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]28, [2]: [CNode]30, [3]: [CNode]32, [4]: [CNode]34, [5]: [CNode]36}
+#  13: ↓construct.4:out1{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]37, [2]: ValueNode<Int64Imm> 0}
+#  14: ↓construct.4:out2{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]37, [2]: ValueNode<Int64Imm> 1}
+#  15: ↓construct.4:out3{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]37, [2]: ValueNode<Int64Imm> 2}
+#  16: ↓construct.4:out4{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]37, [2]: ValueNode<Int64Imm> 3}
+#  17: ↓construct.4:out5{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]37, [2]: ValueNode<Int64Imm> 4}
+#  18: ↓construct.4:[CNode]38{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_list, [1]: out5, [2]: out4, [3]: out3, [4]: out2}
+#  19: ↓construct.4:[CNode]40{[0]: ValueNode<FuncGraph> construct.39, [1]: [CNode]38}
+#  20: ↓construct.4:out_l2{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]40, [2]: ValueNode<Int64Imm> 0}
+#  21: ↓construct.4:out_l3{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]40, [2]: ValueNode<Int64Imm> 1}
+#  22: ↓construct.4:out_l4{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]40, [2]: ValueNode<Int64Imm> 2}
+#  23: ↓construct.4:out_l5{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]40, [2]: ValueNode<Int64Imm> 3}
+#  24: ↓construct.4:out_l1{[0]: ValueNode<FuncGraph> construct.41, [1]: out1, [2]: out_l2}
+#  25: ↓construct.4:[CNode]42{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_list, [1]: out_l2, [2]: out_l3, [3]: out_l4}
+#  26: ↓construct.4:[CNode]25{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> edg, [2]: ValueNode<StringImm> input}
+#  27: ↓construct.4:[CNode]43{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: out_l1, [2]: [CNode]42}
+#  28: ↓construct.4:[CNode]44{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]25, [2]: [CNode]43}
+#  29: ↓construct.4:[CNode]46{[0]: ValueNode<UnpackCall> unpack_call, [1]: ValueNode<FuncGraph> construct.45, [2]: [CNode]44}
+#  30: ↓construct.4:out12{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]46, [2]: ValueNode<Int64Imm> 0}
+#  31: ↓construct.4:out13{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]46, [2]: ValueNode<Int64Imm> 1}
+#  32: ↓construct.4:out14{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]46, [2]: ValueNode<Int64Imm> 2}
+#  33: ↓construct.4:[CNode]54{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: out5}
+#  34: ↓construct.4:[CNode]56{[0]: ValueNode<Primitive> getattr, [1]: out14, [2]: ValueNode<StringImm> shape}
+#  35: ↓construct.4:[CNode]57{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<Int64Imm> 2, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  36: ↓construct.4:[CNode]58{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]56, [2]: [CNode]57}
+#  37: ↓construct.4:[CNode]55{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> size, [2]: ValueNode<StringImm> align_corners}
+#  38: ↓construct.4:[CNode]59{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]58, [2]: ValueNode<BoolImm> true}
+#  39: ↓construct.4:[CNode]60{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]55, [2]: [CNode]59}
+#  40: ↓construct.4:[CNode]61{[0]: ValueNode<UnpackCall> unpack_call, [1]: Φresize_bilinear, [2]: [CNode]54, [3]: [CNode]60}
+#  41: ↓construct.4:out14_5{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: out14, [2]: [CNode]61}
+#  42: ↓construct.4:[CNode]62{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: out_l1, [2]: out14_5}
+#  43: ↓construct.4:[CNode]63{[0]: Φconc, [1]: [CNode]62}
+#  44: ↓construct.4:out{[0]: ValueNode<FuncGraph> construct.64, [1]: [CNode]63}
+#  45: ↓construct.4:edg{[0]: ValueNode<FuncGraph> construct.49, [1]: out_l1}
+#  46: ↓construct.4:[CNode]50{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: edg}
+#  47: ↓construct.4:[CNode]51{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> size, [2]: ValueNode<StringImm> align_corners}
+#  48: ↓construct.4:[CNode]52{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: Φshape, [2]: ValueNode<BoolImm> true}
+#  49: ↓construct.4:[CNode]53{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]51, [2]: [CNode]52}
+#  50: ↓construct.4:edg{[0]: ValueNode<UnpackCall> unpack_call, [1]: Φresize_bilinear, [2]: [CNode]50, [3]: [CNode]53}
+#  51: ↓construct.4:[CNode]65{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: out}
+#  52: ↓construct.4:[CNode]66{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> size, [2]: ValueNode<StringImm> align_corners}
+#  53: ↓construct.4:[CNode]67{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: Φshape, [2]: ValueNode<BoolImm> true}
+#  54: ↓construct.4:[CNode]68{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]66, [2]: [CNode]67}
+#  55: ↓construct.4:out{[0]: ValueNode<UnpackCall> unpack_call, [1]: Φresize_bilinear, [2]: [CNode]65, [3]: [CNode]68}
+#  56: ↓construct.4:[CNode]69{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: edg, [2]: out}
+#  57: ↓construct.4:[CNode]71{[0]: ValueNode<Primitive> Return, [1]: [CNode]70}
+
+
+# [No.5] construct.5
+# In file /home/user/newdisk/SOD/FDDE/train-fine/resnet/resnet50.py(406)/    def construct(self, x)://
+funcgraph fg_5[fg_1](
+        %para367 : Tensor(F32)[1, 267, 400, 3]    # x
+    ) {
+    %1 : Bool = FuncGraph::fg_13(Bool(0))    #(Bool)    # fg_13=bool_.13 #scope: Default/bkbone-ResNet
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/resnet/resnet50.py(407)/        if self.use_se://#72
+    %2 : Func = Primitive::Switch{prim_type=1}(%1, FuncGraph::fg_73, FuncGraph::fg_6)    #(Bool, Func, Func)    # fg_73=✓construct.73, fg_6=✗construct.6 #scope: Default/bkbone-ResNet
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/resnet/resnet50.py(407)/        if self.use_se://#[CNode]74
+
+#------------------------> 4
+    %3 = %2() #scope: Default/bkbone-ResNet
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/resnet/resnet50.py(407)/        if self.use_se://#[CNode]75
+    Primitive::Return{prim_type=1}(%3)    #(Undefined) #scope: Default/bkbone-ResNet
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/resnet/resnet50.py(407)/        if self.use_se://#[CNode]76
+}
+# order:
+#   1: construct.5:72{[0]: ValueNode<FuncGraph> bool_.13, [1]: ValueNode<BoolImm> false}
+#   2: construct.5:[CNode]74{[0]: ValueNode<Primitive> Switch, [1]: 72, [2]: ValueNode<FuncGraph> ✓construct.73, [3]: ValueNode<FuncGraph> ✗construct.6}
+#   3: construct.5:[CNode]75{[0]: [CNode]74}
+#   4: construct.5:[CNode]76{[0]: ValueNode<Primitive> Return, [1]: [CNode]75}
+
+
+# [No.6] ✗construct.6
+# In file /home/user/newdisk/SOD/FDDE/train-fine/resnet/resnet50.py(407)/        if self.use_se://
+funcgraph fg_6[fg_5](
+) {
+
+#------------------------> 5
+    %1 = FuncGraph::fg_7(%para367)    #(Tensor(F32)[1, 267, 400, 3])    # fg_7=construct.7 #scope: Default/bkbone-ResNet
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/resnet/resnet50.py(416)/            x = self.conv1(x)//#x
+    %2 = FuncGraph::fg_77(%1)    #(Undefined)    # fg_77=↓construct.77 #scope: Default/bkbone-ResNet
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/resnet/resnet50.py(407)/        if self.use_se://#[CNode]78
+    Primitive::Return{prim_type=1}(%2)    #(Undefined) #scope: Default/bkbone-ResNet
+      # In file /home/user/newdisk/SOD/FDDE/train-fine/resnet/resnet50.py(407)/        if self.use_se://#[CNode]79
+}
+# order:
+#   1: ✗construct.6:x{[0]: ValueNode<FuncGraph> construct.7, [1]: x}
+#   2: ✗construct.6:[CNode]78{[0]: ValueNode<FuncGraph> ↓construct.77, [1]: x}
+#   3: ✗construct.6:[CNode]79{[0]: ValueNode<Primitive> Return, [1]: [CNode]78}
+
+
+# [No.7] construct.7
+# In file /home/user/anaconda3/envs/mindspore-test/lib/python3.7/site-packages/mindspore/nn/layer/conv.py(260)/    def construct(self, x):/
+funcgraph fg_7[fg_1](
+        %para368 : Tensor(F32)[1, 267, 400, 3]    # x
+    ) {
+    %1 : Bool = FuncGraph::fg_13(Bool(0))    #(Bool)    # fg_13=bool_.13 #scope: Default/bkbone-ResNet/conv1-Conv2d
+      # In file /home/user/anaconda3/envs/mindspore-test/lib/python3.7/site-packages/mindspore/nn/layer/conv.py(262)/        if self.has_bias:/#80
+    %2 : Func = Primitive::Switch{prim_type=1}(%1, FuncGraph::fg_81, FuncGraph::fg_8)    #(Bool, Func, Func)    # fg_81=✓construct.81, fg_8=✗construct.8 #scope: Default/bkbone-ResNet/conv1-Conv2d
+      # In file /home/user/anaconda3/envs/mindspore-test/lib/python3.7/site-packages/mindspore/nn/layer/conv.py(262)/        if self.has_bias:/#[CNode]82
+
+#------------------------> 6
+    %3 = %2() #scope: Default/bkbone-ResNet/conv1-Conv2d
+      # In file /home/user/anaconda3/envs/mindspore-test/lib/python3.7/site-packages/mindspore/nn/layer/conv.py(262)/        if self.has_bias:/#[CNode]83
+    Primitive::Return{prim_type=1}(%3)    #(Undefined) #scope: Default/bkbone-ResNet/conv1-Conv2d
+      # In file /home/user/anaconda3/envs/mindspore-test/lib/python3.7/site-packages/mindspore/nn/layer/conv.py(262)/        if self.has_bias:/#[CNode]84
+}
+# order:
+#   1: construct.7:output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Conv2D, [1]: x, [2]: bkbone.conv1.weight}
+#   2: construct.7:80{[0]: ValueNode<FuncGraph> bool_.13, [1]: ValueNode<BoolImm> false}
+#   3: construct.7:[CNode]82{[0]: ValueNode<Primitive> Switch, [1]: 80, [2]: ValueNode<FuncGraph> ✓construct.81, [3]: ValueNode<FuncGraph> ✗construct.8}
+#   4: construct.7:[CNode]83{[0]: [CNode]82}
+#   5: construct.7:[CNode]84{[0]: ValueNode<Primitive> Return, [1]: [CNode]83}
+
+
+# [No.8] ✗construct.8
+# In file /home/user/anaconda3/envs/mindspore-test/lib/python3.7/site-packages/mindspore/nn/layer/conv.py(262)/        if self.has_bias:/
+funcgraph fg_8[fg_7](
+) {
+
+#------------------------> 7
+    %1 = $(✗construct.8):DoSignaturePrimitive::S-Prim-Conv2D{prim_type=1}[out_channel=I64(64), output_names=["output"], mode=I64(1), pad_mode=I64(1), pad=(I64(0), I64(0), I64(0), I64(0)), groups=I64(1), format="NCHW", group=I64(1), kernel_size=(I64(7), I64(7)), stride=(I64(1), I64(1), I64(2), I64(2)), input_names=["x", "w"], dilation=(I64(1), I64(1), I64(1), I64(1))](%para368, %para29)    #(Tensor(F32)[1, 267, 400, 3], Ref[Tensor(F32)][64, 3, 7, 7]) #scope: Default/bkbone-ResNet/conv1-Conv2d
+      # In file /home/user/anaconda3/envs/mindspore-test/lib/python3.7/site-packages/mindspore/nn/layer/conv.py(261)/        output = self.conv2d(x, self.weight)/#output
+    %2 = FuncGraph::fg_85(%1)    #(Undefined)    # fg_85=↓construct.85 #scope: Default/bkbone-ResNet/conv1-Conv2d
+      # In file /home/user/anaconda3/envs/mindspore-test/lib/python3.7/site-packages/mindspore/nn/layer/conv.py(262)/        if self.has_bias:/#[CNode]86
+    Primitive::Return{prim_type=1}(%2)    #(Undefined) #scope: Default/bkbone-ResNet/conv1-Conv2d
+      # In file /home/user/anaconda3/envs/mindspore-test/lib/python3.7/site-packages/mindspore/nn/layer/conv.py(262)/        if self.has_bias:/#[CNode]87
+}
+# order:
+#   1: ✗construct.8:[CNode]86{[0]: ValueNode<FuncGraph> ↓construct.85, [1]: output}
+#   2: ✗construct.8:[CNode]87{[0]: ValueNode<Primitive> Return, [1]: [CNode]86}
+
+
+#===============================================================================
+# num of function graphs in stack: 9
